@@ -1,4 +1,4 @@
-/**
+package HeroInterface; /**
  * Интерфейс
  * Описание методов взаимодействия классов (персонажей)
  */
@@ -8,7 +8,7 @@
  * Даватель - кому и сколько нанес повреждение
  * Даватель.Ударить(Получатель.Получить повреждение)
  */
-public interface CharacterInteraction {
+public interface CharacterInterface {
 
     /**
      * ударить
@@ -37,4 +37,4 @@ public interface CharacterInteraction {
 
 }
 
-// как правильно разделить классы на папки?
+

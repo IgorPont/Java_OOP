@@ -2,6 +2,8 @@
  * Основной класс.
  */
 
+import СharacterСlasses.*;
+
 import java.util.ArrayList;
 
 public class Main {
@@ -58,5 +60,3 @@ public class Main {
         System.out.println(sorcererArrayList);
     }
 }
-
-// как правильно разделить классы, интерфейс на папки?

@@ -1,8 +1,12 @@
+package СharacterСlasses;
+
+import HeroInterface.CharacterInterface;
+
 /**
  * Абстрактный класс для всех персонажей
- * Реализует все методы интерфейса CharacterInteraction
+ * Реализует все методы интерфейса HeroInterface.CharacterInteraction
  */
-public class BaseHero implements CharacterInteraction {
+public class BaseHero implements CharacterInterface {
     private String name;
     private int attack;
     private int protection;
