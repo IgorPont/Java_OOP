@@ -1,10 +1,13 @@
 package СharacterСlasses;
 
+import java.util.List;
+
 /**
  * Колдун
  */
 public class Sorcerer extends BaseHero {
-    public Sorcerer() {
+    public Sorcerer(List<BaseHero> side, int x, int y) {
+        super(side);
         setName("Колдун");
         setAttack(17);
         setProtection(12);
@@ -15,6 +18,16 @@ public class Sorcerer extends BaseHero {
         setSpeed(9);
         setShipping(false);
         setMagic(true);
-        setStatus(true);
+        setStatus("stand");
+        setPosition(new Vector2(x, y));
+    }
+
+    @Override
+    public boolean returnStatus() {
+        return getStatus().equals("active");
+    }
+
+    public void changePosition() {
+
     }
 }

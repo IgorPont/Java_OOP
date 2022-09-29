@@ -1,10 +1,13 @@
 package СharacterСlasses;
 
+import java.util.List;
+
 /**
  * Снайпер
  */
 public class Sniper extends BaseHero {
-    public Sniper() {
+    public Sniper(List<BaseHero> side, int x, int y) {
+        super(side);
         setName("Снайпер");
         setAttack(12);
         setProtection(10);
@@ -15,6 +18,16 @@ public class Sniper extends BaseHero {
         setSpeed(9);
         setShipping(false);
         setMagic(false);
-        setStatus(true);
+        setStatus("stand");
+        setPosition(new Vector2(x, y));
+    }
+
+    @Override
+    public boolean returnStatus() {
+        return getStatus().equals("active");
+    }
+
+    public void changePosition() {
+
     }
 }

@@ -2,53 +2,26 @@ package СharacterСlasses;
 
 import HeroInterface.CharacterInterface;
 
+import java.util.List;
+
 /**
  * Абстрактный класс для всех персонажей
  * Реализует все методы интерфейса HeroInterface.CharacterInteraction
  */
-public class BaseHero implements CharacterInterface {
+public abstract class BaseHero implements CharacterInterface {
     private String name;
     private int attack;
     private int protection;
     private int shots;
     private int[] damage = new int[2];
     private int health;
+    private int crntHeals;
     private int speed;
     private boolean shipping;
     private boolean magic;
-    private boolean status;
+    private String status;
 
-    public BaseHero() {
-    }
-
-    public BaseHero(String name) {
-        this.name = name;
-    }
-
-    @Override
-    public String toString() {
-        return String.format("\nИмя: %s \n" +
-                        "Атака: %d \n" +
-                        "Защита: %d\n" +
-                        "Выстрелы: %d \n" +
-                        "Урон: %d-%d \n" +
-                        "Здоровье: %d \n" +
-                        "Скорость: %d \n" +
-                        "Доставка: %s \n" +
-                        "Магия: %s \n" +
-                        "Статус: %s \n",
-                name,
-                attack,
-                protection,
-                shots,
-                damage[0],
-                damage[1],
-                health,
-                speed,
-                shipping,
-                magic,
-                status);
-    }
+    private Vector2 position;
 
     public String getName() {
         return name;
@@ -74,6 +47,10 @@ public class BaseHero implements CharacterInterface {
         return health;
     }
 
+    public int getCrntHeals(){
+        return crntHeals;
+    }
+
     public int getSpeed() {
         return speed;
     }
@@ -86,8 +63,12 @@ public class BaseHero implements CharacterInterface {
         return magic;
     }
 
-    public boolean getStatus() {
+    public String getStatus() {
         return status;
+    }
+
+    public  Vector2 getPosition(){
+        return position;
     }
 
     public void setName(String name) {
@@ -118,6 +99,10 @@ public class BaseHero implements CharacterInterface {
         this.health = health;
     }
 
+    public void setCrntHeals(int crntHeals){
+        this.crntHeals = crntHeals;
+    }
+
     public void setSpeed(int speed) {
         this.speed = speed;
     }
@@ -130,31 +115,26 @@ public class BaseHero implements CharacterInterface {
         this.magic = magic;
     }
 
-    public void setStatus(boolean status) {
+    public void setStatus(String status) {
         this.status = status;
     }
 
-    @Override
-    public void hit() {
+    public void setPosition(Vector2 position){
+        this.position = position;
     }
 
-    @Override
-    public float getHit(float damage) {
-        return 0;
+    protected List<BaseHero> list;
+
+    protected List<BaseHero> getList(){
+        return list;
     }
 
-    @Override
-    public boolean returnStatus() {
-        return false;
-    }
-
-    @Override
-    public boolean changePosition() {
-        return false;
+    public BaseHero(List<BaseHero> side){
+        list = side;
     }
 
     @Override
     public String returnCondition() {
-        return null;
+        return name + " Ж:" + health + " З:" + protection + " А:" + attack + " " + status;
     }
 }

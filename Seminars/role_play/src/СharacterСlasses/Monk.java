@@ -1,10 +1,13 @@
 package СharacterСlasses;
 
+import java.util.List;
+
 /**
  * Монах
  */
 public class Monk extends BaseHero {
-    public Monk() {
+    public Monk(List<BaseHero> side, int x, int y) {
+        super(side);
         setName("Монах");
         setAttack(12);
         setProtection(7);
@@ -15,6 +18,15 @@ public class Monk extends BaseHero {
         setSpeed(5);
         setShipping(false);
         setMagic(true);
-        setStatus(true);
+        setStatus("stand");
+        setPosition(new Vector2(x, y));
+    }
+
+    @Override
+    public boolean returnStatus() {
+        return getStatus().equals("active");
+    }
+    public void changePosition() {
+
     }
 }

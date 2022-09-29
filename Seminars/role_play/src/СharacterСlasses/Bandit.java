@@ -1,12 +1,15 @@
 package СharacterСlasses;
 
+import java.util.List;
+
 /**
  * Разбойник
  */
 public class Bandit extends BaseHero {
 
 
-    public Bandit() {
+    public Bandit(List<BaseHero> side, int x, int y) {
+        super(side);
         setName("Разбойник");
         setAttack(8);
         setProtection(3);
@@ -17,11 +20,16 @@ public class Bandit extends BaseHero {
         setSpeed(6);
         setShipping(false);
         setMagic(false);
-        setStatus(true);
+        setStatus("stand");
+        setPosition(new Vector2(x, y));
     }
-//    переопределяем работу метода родительского класса
-//    @Override
-//    public int getAttack() {
-//        return super.getAttack();
-//    }
+
+    @Override
+    public boolean returnStatus() {
+        return getStatus().equals("active");
+    }
+
+    public void changePosition() {
+
+    }
 }

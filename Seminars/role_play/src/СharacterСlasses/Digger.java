@@ -1,11 +1,14 @@
 package СharacterСlasses;
 
+import java.util.List;
+
 /**
  * Копейщик
  */
 public class Digger extends BaseHero {
 
-    public Digger() {
+    public Digger(List<BaseHero> side, int x, int y) {
+        super(side);
         setName("Копейщик");
         setAttack(4);
         setProtection(5);
@@ -16,6 +19,16 @@ public class Digger extends BaseHero {
         setSpeed(4);
         setShipping(false);
         setMagic(false);
-        setStatus(true);
+        setStatus("stand");
+        setPosition(new Vector2(x, y));
+    }
+
+    @Override
+    public boolean returnStatus() {
+        return getStatus().equals("active");
+    }
+
+    public void changePosition() {
+
     }
 }

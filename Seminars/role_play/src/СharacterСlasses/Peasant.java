@@ -1,10 +1,13 @@
 package СharacterСlasses;
 
+import java.util.List;
+
 /**
  * Крестьянин
  */
 public class Peasant extends BaseHero {
-    public Peasant() {
+    public Peasant(List<BaseHero> side, int x, int y) {
+        super(side);
         setName("Крестьянин");
         setAttack(1);
         setProtection(1);
@@ -15,6 +18,16 @@ public class Peasant extends BaseHero {
         setSpeed(3);
         setShipping(true);
         setMagic(false);
-        setStatus(true);
+        setStatus("stand");
+        setPosition(new Vector2(x, y));
+    }
+
+    @Override
+    public boolean returnStatus() {
+        return getStatus().equals("active");
+    }
+
+    public void changePosition() {
+
     }
 }
