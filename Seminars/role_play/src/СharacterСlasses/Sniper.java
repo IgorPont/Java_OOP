@@ -8,23 +8,22 @@ import java.util.List;
 public class Sniper extends BaseHero {
     public Sniper(List<BaseHero> side, int x, int y) {
         super(side);
-        setName("Снайпер");
-        setAttack(12);
-        setProtection(10);
-        setShots(32);
-        setDamage0(8);
-        setDamage1(10);
-        setHealth(15);
-        setSpeed(9);
-        setShipping(false);
-        setMagic(false);
-        setStatus("stand");
-        setPosition(new Vector2(x, y));
+        name = "Снайпер";
+        attack = 12;
+        protection = 10;
+        shots = 32;
+        damage = new Vector2(8, 10);
+        health = 15;
+        speed = 9;
+        shipping = false;
+        magic = false;
+        status = "ожидает";
+        position = new Vector2(x, y);
     }
 
     @Override
     public boolean returnStatus() {
-        return getStatus().equals("active");
+        return status.equals("active");
     }
 
     public void changePosition() {

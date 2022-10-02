@@ -8,23 +8,22 @@ import java.util.List;
 public class Crossbowman extends BaseHero {
     public Crossbowman(List<BaseHero> side, int x, int y) {
         super(side);
-        setName("Арбалетчик");
-        setAttack(6);
-        setProtection(3);
-        setShots(16);
-        setDamage0(2);
-        setDamage1(3);
-        setHealth(10);
-        setSpeed(4);
-        setShipping(false);
-        setMagic(false);
-        setStatus("stand");
-        setPosition(new Vector2(x, y));
+        name = "Арбалетчик";
+        attack = 6;
+        protection = 3;
+        shots = 16;
+        damage = new Vector2(2,3);
+        health = 10;
+        speed = 4;
+        shipping = false;
+        magic = false;
+        status = "ожидает";
+        position = new Vector2(x, y);
     }
 
     @Override
     public boolean returnStatus() {
-        return getStatus().equals("active");
+        return status.equals("active");
     }
     public void changePosition() {
 

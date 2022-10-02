@@ -9,23 +9,22 @@ public class Digger extends BaseHero {
 
     public Digger(List<BaseHero> side, int x, int y) {
         super(side);
-        setName("Копейщик");
-        setAttack(4);
-        setProtection(5);
-        setShots(0);
-        setDamage0(1);
-        setDamage1(3);
-        setHealth(10);
-        setSpeed(4);
-        setShipping(false);
-        setMagic(false);
-        setStatus("stand");
-        setPosition(new Vector2(x, y));
+        name = "Копейщик";
+        attack = 4;
+        protection = 5;
+        shots = 0;
+        damage = new Vector2(1,3);
+        health = 10;
+        speed = 4;
+        shipping = false;
+        magic = false;
+        status = "ожидает";
+        position = new Vector2(x, y);
     }
 
     @Override
     public boolean returnStatus() {
-        return getStatus().equals("active");
+        return status.equals("active");
     }
 
     public void changePosition() {

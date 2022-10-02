@@ -1,11 +1,11 @@
 package СharacterСlasses;
 
 public class Vector2 {
-    private float x;
+    protected int x;
 
-    private float y;
+    protected int y;
 
-    public Vector2(float x, float y){
+    public Vector2(int x, int y){
         this.x = x;
         this.y = y;
     }

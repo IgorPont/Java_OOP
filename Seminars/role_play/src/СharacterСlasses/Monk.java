@@ -1,6 +1,8 @@
 package СharacterСlasses;
 
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 /**
  * Монах
@@ -8,25 +10,27 @@ import java.util.List;
 public class Monk extends BaseHero {
     public Monk(List<BaseHero> side, int x, int y) {
         super(side);
-        setName("Монах");
-        setAttack(12);
-        setProtection(7);
-        setShots(0);
-        setDamage0(-4);
-        setDamage1(-4);
-        setHealth(30);
-        setSpeed(5);
-        setShipping(false);
-        setMagic(true);
-        setStatus("stand");
-        setPosition(new Vector2(x, y));
+        name = "Монах";
+        attack = 12;
+        protection = 7;
+        shots = 0;
+        damage = new Vector2(-4, -4);
+        health = 30;
+        speed = 5;
+        shipping = false;
+        magic = true;
+        status = "ожидает";
+        position = new Vector2(x, y);
     }
 
     @Override
     public boolean returnStatus() {
-        return getStatus().equals("active");
+        return status.equals("active");
     }
+    @Override
     public void changePosition() {
-
+        Random rnd = new Random();
+        int temp = list.indexOf(list.get(rnd.nextInt(list.size())));
+        list.get(temp).health -= damage.x;
     }
 }
