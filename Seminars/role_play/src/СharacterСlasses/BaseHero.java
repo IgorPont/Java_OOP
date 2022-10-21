@@ -15,6 +15,7 @@ public abstract class BaseHero implements CharacterInterface {
     protected int shots;
     protected Vector2 damage;
     protected int health;
+    protected int crntHealth;
     protected int speed;
     protected boolean shipping;
     protected boolean magic;
@@ -22,14 +23,52 @@ public abstract class BaseHero implements CharacterInterface {
     protected Vector2 position;
 
     protected List<BaseHero> list;
-    protected List<BaseHero> getList(){
+
+    protected List<BaseHero> getList() {
         return list;
     }
-    public BaseHero(List<BaseHero> side){
+
+    public BaseHero(List<BaseHero> side) {
         list = side;
     }
+
     @Override
     public String returnCondition() {
-        return name + " Жиз:" + health + " Защ:" + protection + " Атк:" + attack + " " + status;
+        return name +
+                " Жиз:" + crntHealth +
+                " Защ:" + protection +
+                " Атк:" + attack +
+                " Урн:" + (int) (Math.abs((damage.x + damage.y) / 2)) +
+                (shots > 0 ? " Выстрелы:" + shots : "") + " " +
+                returnStatus();
+    }
+
+    public void changePosition() {
+    }
+
+    @Override
+    public String getName() {
+        return name;
+    }
+
+    @Override
+    public Vector2 getPosition() {
+        return position;
+    }
+
+    protected Vector2 getDistance(List<BaseHero> side) {
+        int dist = Integer.MAX_VALUE;
+        int out = 0;
+        for (BaseHero baseHero : side) {
+            float dX = Math.abs(baseHero.position.x - position.x);
+            float dY = Math.abs(baseHero.position.y - position.y);
+            long tD = Math.round(Math.sqrt(dX * dX + dY * dY));
+            if (dist > tD) {
+                out = side.indexOf(baseHero);
+                dist = (int) tD;
+            }
+        }
+        return new Vector2(out, dist);
+
     }
 }

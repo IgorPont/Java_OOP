@@ -14,7 +14,7 @@ public class Digger extends BaseHero {
         protection = 5;
         shots = 0;
         damage = new Vector2(1,3);
-        health = 10;
+        crntHealth = health = 10;
         speed = 4;
         shipping = false;
         magic = false;
@@ -24,7 +24,7 @@ public class Digger extends BaseHero {
 
     @Override
     public boolean returnStatus() {
-        return status.equals("active");
+        return status.equals("жив");
     }
 
     public void changePosition() {

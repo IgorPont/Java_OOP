@@ -1,9 +1,9 @@
 package СharacterСlasses;
 
 public class Vector2 {
-    protected int x;
+    public int x;
 
-    protected int y;
+    public int y;
 
     public Vector2(int x, int y){
         this.x = x;

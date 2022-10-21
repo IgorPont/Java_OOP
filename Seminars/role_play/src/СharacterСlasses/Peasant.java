@@ -13,7 +13,7 @@ public class Peasant extends BaseHero {
         protection = 1;
         shots = 0;
         damage = new Vector2(1,1);
-        health = 1;
+        crntHealth = health = 1;
         speed = 3;
         shipping = true;
         magic = false;
@@ -23,7 +23,7 @@ public class Peasant extends BaseHero {
 
     @Override
     public boolean returnStatus() {
-        return status.equals("active");
+        return status.equals("жив");
     }
 
     public void changePosition() {

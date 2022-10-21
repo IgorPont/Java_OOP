@@ -6,15 +6,15 @@ import java.util.Random;
 /**
  * Колдун
  */
-public class Sorcerer extends BaseHero {
-    public Sorcerer(List<BaseHero> side, int x, int y) {
+public class Wizard extends BaseHero {
+    public Wizard(List<BaseHero> side, int x, int y) {
         super(side);
         name = "Колдун";
         attack = 17;
         protection = 12;
         shots = 0;
         damage = new Vector2(-5, -5);
-        health = 30;
+        crntHealth = health = 30;
         speed = 9;
         shipping = false;
         magic = true;
@@ -24,13 +24,18 @@ public class Sorcerer extends BaseHero {
 
     @Override
     public boolean returnStatus() {
-        return status.equals("active");
+        return status.equals("жив");
     }
 
+    @Override
     public void changePosition() {
-        Random rnd = new Random();
-        int temp = list.indexOf(list.get(rnd.nextInt(list.size())));
-        list.get(temp).health -= damage.x;
-
+        int i = new Random().nextInt(super.list.size());
+        BaseHero p = super.list.get(i);
+        if (!p.status.equals("мертв")){
+            p.crntHealth -= damage.x;
+            if (p.crntHealth >= p.health){
+                p.crntHealth = p.health;
+            }
+        }
     }
 }

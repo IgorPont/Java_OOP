@@ -13,7 +13,7 @@ public class Crossbowman extends BaseHero {
         protection = 3;
         shots = 16;
         damage = new Vector2(2,3);
-        health = 10;
+        crntHealth = health = 10;
         speed = 4;
         shipping = false;
         magic = false;
@@ -23,9 +23,15 @@ public class Crossbowman extends BaseHero {
 
     @Override
     public boolean returnStatus() {
-        return status.equals("active");
+        return status.equals("жив");
     }
+    @Override
     public void changePosition() {
-
+        boolean tmp = false;
+        for(BaseHero bh: super.list){
+            if(bh.name.equals(("Крестьянин")) &&
+                    !bh.status.equals("мертв")) tmp = true;
+            if (tmp) shots++;
+        }
     }
 }

@@ -1,4 +1,8 @@
-package HeroInterface; /**
+package HeroInterface;
+
+import СharacterСlasses.Vector2;
+
+/**
  * Интерфейс
  * Описание методов взаимодействия классов (персонажей)
  */
@@ -18,7 +22,18 @@ public interface CharacterInterface {
     /**
      * Вернуть состояние
      */
-    String returnCondition(); // возвращает состояние (здоровье, атака и тд)
+    String returnCondition();
+
+    /**
+     *
+     * Вернуть имя
+     */
+    String getName();
+
+    /**
+     * Вернуть позицию на поле
+     */
+    Vector2 getPosition();
 
 }
 

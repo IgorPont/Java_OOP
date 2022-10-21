@@ -15,7 +15,7 @@ public class Bandit extends BaseHero {
         protection = 3;
         shots = 0;
         damage = new Vector2(2,4);
-        health = 10;
+        crntHealth = health = 10;
         speed = 6;
         shipping = false;
         magic = false;
@@ -25,7 +25,7 @@ public class Bandit extends BaseHero {
 
     @Override
     public boolean returnStatus() {
-        return status.equals("active");
+        return status.equals("жив");
     }
 
     public void changePosition() {

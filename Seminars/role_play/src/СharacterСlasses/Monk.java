@@ -15,7 +15,7 @@ public class Monk extends BaseHero {
         protection = 7;
         shots = 0;
         damage = new Vector2(-4, -4);
-        health = 30;
+        crntHealth = health = 30;
         speed = 5;
         shipping = false;
         magic = true;
@@ -25,12 +25,17 @@ public class Monk extends BaseHero {
 
     @Override
     public boolean returnStatus() {
-        return status.equals("active");
+        return status.equals("жив");
     }
     @Override
     public void changePosition() {
-        Random rnd = new Random();
-        int temp = list.indexOf(list.get(rnd.nextInt(list.size())));
-        list.get(temp).health -= damage.x;
+        int i = new Random().nextInt(super.list.size());
+        BaseHero p = super.list.get(i);
+        if (!p.status.equals("мертв")){
+            p.crntHealth -= damage.x;
+            if (p.crntHealth >= p.health){
+                p.crntHealth = p.health;
+            }
+        }
     }
 }
