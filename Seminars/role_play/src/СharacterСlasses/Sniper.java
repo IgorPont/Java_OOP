@@ -6,33 +6,38 @@ import java.util.List;
  * Снайпер
  */
 public class Sniper extends BaseHero {
-    public Sniper(List<BaseHero> side, int x, int y) {
+
+    public Sniper(List<BaseHero> side, int x, int y){
         super(side);
-        name = "Снайпер";
+        name = ("Sniper");
         attack = 12;
-        protection = 10;
-        shots = 32;
-        damage = new Vector2(8, 10);
-        crntHealth = health = 15;
+        defence = 10;
+        shoot = 32;
+        damage = new Vector2(1, 5);
+        crntHeals = health = 15;
         speed = 9;
-        shipping = false;
+        delivery = false;
         magic = false;
-        status = "ожидает";
+        status = "stand";
         position = new Vector2(x, y);
     }
 
     @Override
-    public boolean returnStatus() {
-        return status.equals("жив");
+    public void step(List<BaseHero> side) {
+        boolean tmp = false;
+        for (BaseHero bh: super.list) {
+            if (bh.name.equals("Peasant") && bh.name.equals("stand")) {
+                tmp = true;
+                bh.name = "busy";
+                break;
+            }
+        }
+        Vector2 target = super.getDistance(side);
+        float dd = (damage.x+damage.y)/2;
+        int d = (int) Math.round(dd + (dd/10)*(5-target.y));
+        side.get((int)target.x).crntHeals -= d;
+        if (!tmp) shoot--;
     }
 
-    @Override
-    public void changePosition() {
-        boolean tmp = false;
-        for(BaseHero bh: super.list){
-            if(bh.name.equals(("Крестьянин")) &&
-                    !bh.status.equals("мертв")) tmp = true;
-            if (tmp) shots++;
-        }
-    }
 }
+

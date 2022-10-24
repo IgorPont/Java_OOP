@@ -1,23 +1,26 @@
-package HeroInterface;
-
-import СharacterСlasses.Vector2;
-
 /**
  * Интерфейс
  * Описание методов взаимодействия классов (персонажей)
  */
+
+package HeroInterface;
+
+import СharacterСlasses.BaseHero;
+import СharacterСlasses.Vector2;
+
+import java.util.List;
 
 public interface CharacterInterface {
 
     /**
      * Вернуть статус
      */
-    boolean returnStatus();
+    void setStatus();
 
     /**
      * Переместиться
      */
-    void changePosition();
+    void step(List<BaseHero> side);
 
     /**
      * Вернуть состояние
@@ -25,7 +28,6 @@ public interface CharacterInterface {
     String returnCondition();
 
     /**
-     *
      * Вернуть имя
      */
     String getName();
