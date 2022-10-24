@@ -122,7 +122,7 @@ public class Main {
         darkSide.forEach((v) -> l[0] = Math.max(l[0], v.returnCondition().length()));
         for (int i = 0; i < l[0] * 2; i++) System.out.print("_");
         System.out.println("");
-        System.out.print(top10 + "    ");
+        System.out.print(top10 + "   ");
         System.out.print("Синяя команда");
         for (int i = 0; i < l[0] - 9; i++) System.out.print(" ");
         System.out.println(":\tЗеленая команда");
