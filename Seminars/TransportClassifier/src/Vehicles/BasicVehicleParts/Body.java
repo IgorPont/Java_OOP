@@ -7,7 +7,7 @@ public class Body {
     private final float length; // длина
     private final float width; // ширина
     private final float height; // высота
-    private final String bodyСolour; // цвет кузова
+    private final String bodyColour; // цвет кузова
 
     public Body(String idBody,
                 String bodyType,
@@ -15,13 +15,25 @@ public class Body {
                 float length,
                 float width,
                 float height,
-                String bodyСolour){
+                String bodyColour) {
         this.idBody = idBody;
         this.bodyType = bodyType;
         this.bodyMaterial = bodyMaterial;
         this.length = length;
         this.width = width;
         this.height = height;
-        this.bodyСolour = bodyСolour;
+        this.bodyColour = bodyColour;
+    }
+
+    @Override
+    public String toString() {
+        return String.format("\n\t--Body--" +
+                "\nBody number: " + idBody +
+                "\nBody type: " + bodyType +
+                "\nBody material: " + bodyMaterial +
+                "\nLength of vehicle: " + length +
+                "\nWidth of vehicle: " + width +
+                "\nHeight of vehicle: " + height +
+                "\nBody colour: " + bodyColour);
     }
 }

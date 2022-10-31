@@ -2,9 +2,10 @@ package Vehicles.VehicleTypes;
 import Vehicles.BasicVehicleParts.Body;
 import Vehicles.BasicVehicleParts.Chassis;
 import Vehicles.BasicVehicleParts.Engine;
+import Vehicles.Interface.VehiclesInterface;
 
 
-public abstract class Transport {
+public abstract class Transport implements VehiclesInterface {
     protected final Engine engine;
     protected final Chassis chassis;
     protected final Body body;
@@ -15,5 +16,7 @@ public abstract class Transport {
         this.body = body;
     }
 
-
+    public float getMaxSpeed(){
+        return chassis.getMaxSpeed();
+    }
 }

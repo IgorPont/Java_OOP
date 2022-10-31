@@ -19,7 +19,7 @@ public class Chassis {
                    String wheelFormula,
                    int wheelbase,
                    String transmission,
-                   String controlMechanism){
+                   String controlMechanism) {
         this.idChassis = idChassis;
         this.seats = seats;
         this.loadCapacity = loadCapacity;
@@ -31,7 +31,21 @@ public class Chassis {
         this.controlMechanism = controlMechanism;
     }
 
+    @Override
+    public String toString() {
+        return String.format("\n\t--Chassis--" +
+                "\nNumber chassis: " + idChassis +
+                "\nNumber of seats: " + seats +
+                "\nLoad capacity: " + loadCapacity +
+                "\nFuel tank: " + fuelTank +
+                "\nMaximum speed of the vehicle: " + maxSpeed +
+                "\nWheel formula: " + wheelFormula +
+                "\nWheel base: " + wheelbase +
+                "\nTransmission: " + transmission +
+                "\nControl mechanism: " + controlMechanism);
+    }
 
-
-
+    public float getMaxSpeed(){
+        return maxSpeed;
+    }
 }

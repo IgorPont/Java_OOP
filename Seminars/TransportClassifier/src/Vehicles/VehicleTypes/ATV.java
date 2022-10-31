@@ -5,9 +5,15 @@ import Vehicles.BasicVehicleParts.Chassis;
 import Vehicles.BasicVehicleParts.Engine;
 
 public class ATV extends Motorbike {
-    public ATV(Engine engine, Chassis chassis, Body body, float steering){
-        super(engine, chassis, body, steering);
+    public ATV(String vehicleType,
+               String vehicleModel,
+               Engine engine,
+               Chassis chassis,
+               Body body,
+               int[] wheelSize,
+               float steering) {
+        super(vehicleType, vehicleModel,
+                engine, chassis, body, wheelSize,
+                steering);
     }
-
-
 }
