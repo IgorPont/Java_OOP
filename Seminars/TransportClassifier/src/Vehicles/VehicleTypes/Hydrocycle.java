@@ -23,7 +23,7 @@ public class Hydrocycle extends Transport {
 
     @Override
     public String toString(){
-        return String.format("Type of vehicle: " + vehicleType +
+        return String.format("\nType of vehicle: " + vehicleType +
                 "\nModel: " + vehicleModel +
                 engine + chassis + body +
                 "\nSponson type: " + sponsonType);
@@ -31,7 +31,7 @@ public class Hydrocycle extends Transport {
 
     @Override
     public String getEnvironment(){
-        return String.format("Type of vehicle: " + vehicleType +
+        return String.format("\nType of vehicle: " + vehicleType +
                 "\nModel: " + vehicleModel +
                 "\nSponson type: " + sponsonType);
     }

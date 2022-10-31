@@ -4,11 +4,15 @@ import Vehicles.BasicVehicleParts.Engine;
 import Vehicles.Interface.VehiclesInterface;
 import Vehicles.VehicleTypes.*;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * Vehicle classifier
  */
 
 public class Main {
+    private static final List<Transport> vehicles = new ArrayList<>();
     public static void main(String[] args) {
         Motorbike bmw_g_310_r = new Motorbike(
                 "Motorbike",
@@ -71,7 +75,7 @@ public class Main {
                         1480f,
                         "Orange"),
                 new int[]{26, 9, 14},
-                0f);
+                53.5f);
 
         Car ford_fiesta = new Car(
                 "Car",
@@ -170,8 +174,15 @@ public class Main {
                         "Yellow"),
                 "Sporty X-sponsors");
 
-        System.out.println();
-        System.out.println(rm_800_duo.getMaxSpeed());
+        vehicles.add(bmw_g_310_r);
+        vehicles.add(rm_800_duo);
+        vehicles.add(ford_fiesta);
+        vehicles.add(gen_h_4);
+        vehicles.add(sea_doo_performance_rxp_x_300);
+
+        vehicles.forEach((i) -> System.out.println(i.toString()));
+        vehicles.forEach((i) -> System.out.println(i.getMaxSpeed()));
+        vehicles.forEach((i) -> System.out.println(i.getEnvironment()));
 
 
 

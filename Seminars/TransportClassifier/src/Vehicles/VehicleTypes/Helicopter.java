@@ -32,7 +32,7 @@ public class Helicopter extends Transport {
 
     @Override
     public String toString(){
-        return String.format("Type of vehicle: " + vehicleType +
+        return String.format("\nType of vehicle: " + vehicleType +
                 "\nModel: " + vehicleModel +
                 engine + chassis + body +
                 "\nRotor diameter: " + rotorDiameter +
@@ -43,7 +43,7 @@ public class Helicopter extends Transport {
 
     @Override
     public String getEnvironment(){
-        return String.format("Type of vehicle: " + vehicleType +
+        return String.format("\nType of vehicle: " + vehicleType +
                 "\nModel: " + vehicleModel +
                 "\nRotor diameter: " + rotorDiameter +
                 "\nWork ceiling: " + workCeiling +

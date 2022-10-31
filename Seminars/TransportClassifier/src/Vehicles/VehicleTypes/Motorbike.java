@@ -26,7 +26,7 @@ public class Motorbike extends Transport {
 
     @Override
     public String toString() {
-        return String.format("Type of vehicle: " + vehicleType +
+        return String.format("\nType of vehicle: " + vehicleType +
                 "\nModel: " + vehicleModel +
                 engine + chassis + body +
                 "\nWheel size: " + wheelSize[0] + "/" + wheelSize[1] + "/" + wheelSize[2] +
@@ -35,7 +35,7 @@ public class Motorbike extends Transport {
 
     @Override
     public String getEnvironment(){
-        return String.format("Type of vehicle: " + vehicleType +
+        return String.format("\nType of vehicle: " + vehicleType +
                 "\nModel: " + vehicleModel +
                 "\nWheel size: " + wheelSize[0] + "/" + wheelSize[1] + "/" + wheelSize[2] +
                 "\nSteering angle: " + steering);
