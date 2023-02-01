@@ -1,4 +1,4 @@
-public class ConcretCar extends Car{
+public class ConcretCar extends Car implements WipingGlass {
     protected ConcretCar(String brand, String model,
                          String color, String cabin,
                          int wheelCount, String fuel,
@@ -7,5 +7,26 @@ public class ConcretCar extends Car{
                 color, cabin,
                 wheelCount, fuel,
                 gearBox, engineVolume);
+    }
+
+
+    @Override
+    public void fuel() {
+
+    }
+
+    @Override
+    public void wipingTheGlass() {
+
+    }
+
+    @Override
+    public void headlightWipe() {
+
+    }
+
+    @Override
+    public void wipingTheMirrors() {
+
     }
 }

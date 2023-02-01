@@ -1,4 +1,4 @@
-public class SweepCar extends Car implements LightOptions {
+public class SweepCar extends Car implements LightOptions, WipingGlass {
 
     protected SweepCar(String brand, String model,
                        String color, String cabin,
@@ -16,6 +16,26 @@ public class SweepCar extends Car implements LightOptions {
 
     @Override
     public void antiFogLight() {
+
+    }
+
+    @Override
+    public void fuel() {
+
+    }
+
+    @Override
+    public void wipingTheGlass() {
+
+    }
+
+    @Override
+    public void headlightWipe() {
+
+    }
+
+    @Override
+    public void wipingTheMirrors() {
 
     }
 }
